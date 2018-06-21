@@ -1,4 +1,5 @@
-﻿using ARFlightsApi.Models;
+﻿using ARFlightsApi.EfDbContext;
+using ARFlightsApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace ARFlightsApi.Controllers
                     b.Helicopter.Capacity,
                     b.Booked,
                     Available = (bool)((b.Booked < b.Helicopter.Capacity) && (b.Helicopter.Capacity - b.Booked >= pax) )
-                }).ToList();
+                }).ToList().OrderBy(b => b.BookingDate).ThenBy(b => b.HelicopterName);
         }
     }
 }

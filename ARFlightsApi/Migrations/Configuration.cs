@@ -7,7 +7,7 @@ namespace ARFlightsApi.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ARFlightsApi.Models.ARFlightContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ARFlightsApi.EfDbContext.ARFlightContext>
     {
         public Configuration()
         {
@@ -15,7 +15,7 @@ namespace ARFlightsApi.Migrations
             ContextKey = "ARFlightsApi.Models.ARFlightContext";
         }
 
-        protected override void Seed(ARFlightsApi.Models.ARFlightContext context)
+        protected override void Seed(ARFlightsApi.EfDbContext.ARFlightContext context)
         {
             context.Helicopters.AddOrUpdate(x => x.HelicopterId,
                 new Helicopter() { HelicopterId = 1, HelicopterName = "Port", Origin = "Mel", Destination = "Port Philip", Capacity = 10 },

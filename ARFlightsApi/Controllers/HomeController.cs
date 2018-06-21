@@ -13,5 +13,10 @@ namespace ARFlightsApi.Controllers
         {
             return RedirectToAction("Index", "Help", new { area = "" });
         }
+                
+        public ActionResult CheckAvail()
+        {
+            return View();
+        }
     }
 }

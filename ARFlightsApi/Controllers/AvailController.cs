@@ -23,7 +23,7 @@ namespace ARFlightsApi.Controllers
                     b.Helicopter.Capacity,
                     b.Booked,
                     Available = (bool)((b.Booked < b.Helicopter.Capacity) && (b.Helicopter.Capacity - b.Booked >= pax) )
-                }).ToList().OrderBy(b => b.BookingDate).ThenBy(b => b.HelicopterName);
+                }).ToList().Take(10).OrderBy(b => b.BookingDate).ThenBy(b => b.HelicopterName);
         }
     }
 }

@@ -1,23 +1,19 @@
-﻿@model ARFlightsApi.Helper.Availability
-@{
+﻿@{
     ViewBag.Title = "Check Availability";
 }
 
-<h2>CheckAvail</h2>
+<h2>Check Availability</h2>
 <div class="form-group input-group-sm">
-    @Html.LabelFor(model => model.from)
-    @Html.TextBoxFor(model => model.from, new { @class = "form-control datepicker", placeholder = "Enter from date here...", id="from" })
-    @Html.ValidationMessageFor(model => model.from)
+    From: <input type="text" name="from" id="from" class = "form-control datepicker"/>
+
 </div>
 <div class="form-group input-group-sm">
-    @Html.LabelFor(model => model.to)
-    @Html.TextBoxFor(model => model.to, new { @class = "form-control datepicker", placeholder = "Enter from date here...", id = "to" })
-    @Html.ValidationMessageFor(model => model.to)
+    To: <input type="text" name="to" id="to" class = "form-control datepicker"/>
+
 </div>
 <div class="form-group input-group-sm">
-    @Html.LabelFor(model => model.Pax)
-    @Html.TextBoxFor(model => model.Pax, new { @class = "form-control ", id = "pax" })
-    @Html.ValidationMessageFor(model => model.Pax)
+    No of Passengers: <input type="number" name="pax" id="pax" class = "form-control"/>
+
 </div>
 <div class="form-group input-group-sm">
     <button type="submit" class="btn btn-default" id="checkAvail">Check Availability</button>

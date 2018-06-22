@@ -189,7 +189,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helper\Avaiability.cs" />
     <Compile Include="Migrations\201806211201446_InitialCreate.cs" />
     <Compile Include="Migrations\201806211201446_InitialCreate.Designer.cs">
       <DependentUpon>201806211201446_InitialCreate.cs</DependentUpon>
@@ -198,7 +197,6 @@
     <Compile Include="Models\Booking.cs" />
     <Compile Include="Models\Helicopter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\BookingStatus.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

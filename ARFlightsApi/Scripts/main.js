@@ -1,4 +1,7 @@
 ﻿
+$(function () {
+    $(".datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+});
 
 var btn = document.getElementById("checkAvail");
 var booking = document.getElementById("bookingContent");
@@ -25,6 +28,6 @@ function renderHTML(data) {
     var table = $('#bookingTable');
     $('#bookingTable').find('tbody').empty();
     for (var i = 0; i < data.length; i++) {
-        table.append("<tr><td >" + data[i].BookingDate + "</td ><td >" + data[i].HelicopterName + "</td ><td >" + data[i].Capacity + "</td ><td >" + data[i].Booked + "</td ><td >" + data[i].Available + "</td ></tr>");
+        table.append("<tr><td >" + data[i].Date + "</td ><td >" + data[i].HelicopterName + "</td ><td >" + data[i].Capacity + "</td ><td >" + data[i].Booked + "</td ><td >" + data[i].Available + "</td ></tr>");
     }
 }

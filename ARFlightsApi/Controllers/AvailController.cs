@@ -15,15 +15,16 @@ namespace ARFlightsApi.Controllers
         public Object CheckAvailability(DateTime from, DateTime to, int pax)
         {
             ARFlightContext entity = new ARFlightContext();
-            return entity.Bookings.Where(b => b.BookingDate >= from && b.BookingDate <= to)
-                .Select(b => new
+            return entity.Bookings.Where(b => b.BookingDate >= from && b.BookingDate <= to).ToList()
+                .Select(b => 
+                new
                 {
-                    b.BookingDate,
+                    Date = b.BookingDate.ToShortDateString(),
                     b.Helicopter.HelicopterName,
                     b.Helicopter.Capacity,
                     b.Booked,
-                    Available = (bool)((b.Booked < b.Helicopter.Capacity) && (b.Helicopter.Capacity - b.Booked >= pax) )
-                }).ToList().OrderBy(b => b.BookingDate).ThenBy(b => b.HelicopterName);
+                    Available = ((b.Booked < b.Helicopter.Capacity) && (b.Helicopter.Capacity - b.Booked >= pax) ) ? "Available" : "NOT Available"
+                }).OrderBy(b => b.Date).ThenBy(b => b.HelicopterName);
         }
     }
 }
